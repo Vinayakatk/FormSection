@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.myStateMachines/src-gen" editDirectory="/org.xtext.example.myStateMachines.edit/src"
+    editorDirectory="/org.xtext.example.myStateMachines.editor/src" modelPluginID="org.xtext.example.myStateMachines"
+    forceOverwrite="true" modelName="MyStateMachines" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.example.myStateMachines.edit"
+    editorPluginID="org.xtext.example.myStateMachines.editor" runtimeVersion="2.10">
+  <genPackages prefix="MyStateMachines" basePackage="org.xtext.example.myStateMachines"
+      disposableProviderFactory="true" fileExtensions="msm" ecorePackage="MyStateMachines.ecore#/">
+    <genClasses ecoreClass="MyStateMachines.ecore#//Statemachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyStateMachines.ecore#//Statemachine/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyStateMachines.ecore#//Statemachine/states"/>
+    </genClasses>
+    <genClasses ecoreClass="MyStateMachines.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyStateMachines.ecore#//Event/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MyStateMachines.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyStateMachines.ecore#//State/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyStateMachines.ecore#//State/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyStateMachines.ecore#//State/refinement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyStateMachines.ecore#//State/transitions"/>
+    </genClasses>
+    <genClasses ecoreClass="MyStateMachines.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyStateMachines.ecore#//Transition/event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyStateMachines.ecore#//Transition/state"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

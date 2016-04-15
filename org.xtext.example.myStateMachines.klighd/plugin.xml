@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.cau.cs.kieler.klighd.diagramSyntheses">
+   <diagramSynthesis
+         class="de.cau.cs.kieler.klighd.syntheses.GuiceBasedSynthesisFactory:my.statemachine.diagrams.StatemachineDiagramSynthesis"
+         id="my.statemachine.diagrams.StatemachineDiagramSynthesis">
+   </diagramSynthesis>
+   </extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <category
+         description="Statemachine diagrams"
+         id="my.statemachine.diagrams.StatemachineDiagrams"
+         name="StatemachineDiagrams">
+   </category>
+   <command
+         categoryId="my.statemachine.diagrams.StatemachineDiagrams"
+         defaultHandler="my.statemachine.diagrams.OpenDiagramHandler"
+         description="Primitive helper command that opens KLighD-based Statemachine diagrams."
+         id="my.statemachine.diagrams.openStatemachineDiagram"
+         name="Open Statemachine diagram">
+   </command>
+</extension>
+
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         locationURI="popup:org.eclipse.ui.popup.any?before=additions">
+      <command
+            commandId="my.statemachine.diagrams.openStatemachineDiagram"
+            label="Open Statemachine diagram"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <or>
+               <and>
+                  <with
+                        variable="activeEditor">
+                     <instanceof
+                           value="org.eclipse.xtext.ui.editor.XtextEditor">
+                     </instanceof>
+                  </with>
+                  <with
+                        variable="activeEditorInput">
+                     <adapt type="org.eclipse.core.resources.IResource">
+                         <test
+                               forcePluginActivation="false"
+                               property="org.eclipse.core.resources.extension"
+                               value="msm">
+                         </test>
+                     </adapt>
+                  </with>
+               </and>
+               <iterate ifEmpty="false" operator="or">
+                  <or>
+                     <instanceof
+                         value="org.xtext.example.myStateMachines.myStateMachines.Statemachine">
+                     </instanceof>
+                     <adapt type="org.eclipse.core.resources.IResource">
+                         <test
+                               forcePluginActivation="false"
+                               property="org.eclipse.core.resources.extension"
+                               value="msm">
+                         </test>
+                     </adapt>
+                  </or>
+               </iterate>
+            </or>
+         </visibleWhen>
+      </command>
+   </menuContribution>
+</extension>
+
+</plugin>

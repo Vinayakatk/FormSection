@@ -1,0 +1,30 @@
+grammar org.xtext.example.myStateMachines.MyStateMachines with org.eclipse.xtext.common.Terminals
+
+generate myStateMachines "http://www.xtext.org/example/myStateMachines/MyStateMachines"
+
+Statemachine :
+     {Statemachine}
+    ('events' 
+        events+=Event+ 
+    'end')?
+
+    states+=State*
+;
+
+Event:
+    name=ID
+;
+
+State:
+    'state' name=ID
+        ('actions' actions+=(ID|STRING)+)?
+        ('refinement' '{'
+            refinement = Statemachine
+        '}')?
+        transitions+=Transition*
+    'end'
+;
+
+Transition:
+    event=[Event]? '=>' state=[State]
+;
