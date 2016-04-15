@@ -1,0 +1,5 @@
+package extract
+
+class asdsad {
+	
+}
