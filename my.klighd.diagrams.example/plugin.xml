@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.cau.cs.kieler.klighd.diagramSyntheses">
+   <diagramSynthesis
+         class="de.cau.cs.kieler.klighd.syntheses.GuiceBasedSynthesisFactory:my.klighd.diagrams.example.LibraryDiagramSynthesis"
+         id="my.klighd.diagrams.example.LibraryDiagramSynthesis">
+   </diagramSynthesis>
+   </extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <category
+         description="Library diagrams"
+         id="my.klighd.diagrams.example.LibraryDiagrams"
+         name="LibraryDiagrams">
+   </category>
+   <command
+         categoryId="my.klighd.diagrams.example.LibraryDiagrams"
+         defaultHandler="my.klighd.diagrams.example.OpenDiagramHandler"
+         description="Primitive helper command that opens KLighD-based Library diagrams."
+         id="my.klighd.diagrams.example.openLibraryDiagram"
+         name="Open Library diagram">
+   </command>
+</extension>
+
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         locationURI="popup:org.eclipse.ui.popup.any?before=additions">
+      <command
+            commandId="my.klighd.diagrams.example.openLibraryDiagram"
+            label="Open Library diagram"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <iterate ifEmpty="false" operator="or">
+               <or>
+                   <instanceof
+                         value="org.eclipse.emf.examples.extlibrary.Library">
+                   </instanceof>
+               </or>
+            </iterate>
+         </visibleWhen>
+      </command>
+   </menuContribution>
+</extension>
+
+</plugin>

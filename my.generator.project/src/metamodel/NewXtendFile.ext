@@ -1,0 +1,86 @@
+import Library;
+import metamodel;
+
+
+cached String dosome():
+let x=11:if(x<2)then{
+	let y=12: if(y>4) then {
+	let k=x+y:k
+	}->y
+}->switch(x){
+case 11 : dosomeelse()
+case 12 : "houdy less"
+default :"default" 
+}
+;
+  
+Void dosomeelsebb():
+let t = new JavaMetaModel:
+	let hh = new JavaMetaModel :  t.sons.forAll(e|e.name!='22')
+
+;
+Void ForAll():
+let t = new JavaMetaModel:
+	let hh = new JavaMetaModel :  t.sons.li.name
+
+;
+
+Void Testref():
+	let v = "dsfsdf":false
+;
+Void TestIntegerParsing():
+let tt = new JavaMetaModel:
+	let v = new JavaMetaModel: tt.sons.metaType.toString()// will return false  "dfsdf".asInteger() returns null
+
+;
+String dosomeelse():
+let x = if(true)then ext("Vinay") :switch(x.toString()){
+case "Vinay" : x
+case "vinay" : getname(new JavaMetaModel).toFirstUpper()
+default : "default"
+}
+;
+
+String ext(String name):
+	name.toLowerCase()
+;
+
+
+
+Void get():
+JAVA metamodel.Start.getList()
+
+;
+
+//always return type ovverides declared type 
+getfirst():
+get()->{}
+
+;
+
+getname(JavaMetaModel dd):
+dd.name
+;
+
+String saySomething(Integer a,Integer b):
+let x=a:
+let y=b:
+if(x>y)then {"print me "}
+else {"show me"}
+-> if(x==y) then "hello"
+-> if (x<y) then "wat the hell"
+
+
+
+;
+
+what():
+if(true)then "false"
+-> if(false) then "true"
+-> switch("something"){
+case "f":"i am doomed"
+default:"all is well"
+}
+
+
+;

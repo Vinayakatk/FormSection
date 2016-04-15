@@ -1,0 +1,31 @@
+«IMPORT metamodel»
+
+«EXTENSION template::GeneratorExtensions»
+ «EXTENSION metamodel::NewXtendFile»
+«DEFINE main FOR Model»
+«EXPAND javaClass FOREACH entities()»
+«ENDDEFINE»
+
+«DEFINE javaClass FOR Entity»
+
+    «FILE name+".java"»
+           public class «ForAll()» {
+            
+        }
+    «ENDFILE»
+«ENDDEFINE»
+
+«DEFINE InstanceVar FOR Feature»
+    private «this.type.name» «this.name»;
+«ENDDEFINE»
+
+«REM» The qualifier 'this' is optional «ENDREM»
+«DEFINE AccessorMethods FOR Feature»
+    public void «setter()»(«type.name» «name») {
+        this.«name» = «name»;
+    }
+
+    public «type.name» «getter()»() {
+        return «name»;
+    }
+«ENDDEFINE»

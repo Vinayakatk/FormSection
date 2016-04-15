@@ -1,0 +1,14 @@
+«IMPORT  Library»
+
+«DEFINE lib FOR Library::Library »
+	
+		«EXPAND bookdef FOREACH this.books SEPARATOR "\n"»
+	
+
+«ENDDEFINE»
+
+
+«DEFINE bookdef FOR Library::Book»
+	
+	public void «this.name»
+«ENDDEFINE»

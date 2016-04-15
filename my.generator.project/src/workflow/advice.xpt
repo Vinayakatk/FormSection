@@ -1,0 +1,21 @@
+
+«IMPORT metamodel»
+
+«EXTENSION template::GeneratorExtensions»
+ «EXTENSION metamodel::NewXtendFile»
+«AROUND template::Template::main FOR Model»
+
+f«FILE "ggg.h"»
+
+dsfdsfdvcsfds
+«ENDFILE»
+«targetDef.proceed()»
+«ENDAROUND»
+
+«AROUND *jaa* FOR Entity» 
+«targetDef.proceed()»
+«FILE "vvv.c"»
+dsfdsfvfglkfl
+«ENDFILE»
+
+«ENDAROUND»

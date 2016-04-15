@@ -1,0 +1,6 @@
+import Library;
+
+context Book ERROR "BOOK HAS TO HAVE A NAME":
+
+	this.name!=null
+;
