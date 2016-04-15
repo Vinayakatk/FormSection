@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.mydsl/src-gen" editDirectory="/org.xtext.example.mydsl.edit/src"
+    editorDirectory="/org.xtext.example.mydsl.editor/src" modelPluginID="org.xtext.example.mydsl"
+    forceOverwrite="true" modelName="Survey" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.example.mydsl.edit"
+    editorPluginID="org.xtext.example.mydsl.editor" runtimeVersion="2.11">
+  <genPackages prefix="Survey" basePackage="org.eclipse.xtext.tutorial.survey" disposableProviderFactory="true"
+      fileExtensions="mydsl" ecorePackage="Survey.ecore#/">
+    <genClasses ecoreClass="Survey.ecore#//Main">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Main/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Main/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Main/s"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//Survey">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Survey/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Survey/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Survey/pages"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Page/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Page/questions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//Page/followUps"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//FollowUp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Survey.ecore#//FollowUp/next"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//Guard">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Survey.ecore#//Guard/question"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Survey.ecore#//Guard/answer"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//Question">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Question/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Question/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//FreeTextQuestion"/>
+    <genClasses ecoreClass="Survey.ecore#//ChoiceQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//ChoiceQuestion/single"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Survey.ecore#//ChoiceQuestion/choices"/>
+    </genClasses>
+    <genClasses ecoreClass="Survey.ecore#//Choice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Choice/freetext"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Choice/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Survey.ecore#//Choice/text"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
