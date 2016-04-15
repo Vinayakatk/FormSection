@@ -1,0 +1,13 @@
+grammar org.xtext.example.Semcolor with org.eclipse.xtext.common.Terminals
+
+generate semcolor "http://www.xtext.org/example/Semcolor"
+
+Persons:
+	persons+=Person*;
+	
+Person:
+	name=Name (gender=Gender)?;
+
+Name: firstName=ID lastName=ID;
+
+enum Gender: unknown|female|male;

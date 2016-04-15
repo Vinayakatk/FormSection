@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.semcolor/src-gen" editDirectory="/org.xtext.example.semcolor.edit/src"
+    editorDirectory="/org.xtext.example.semcolor.editor/src" modelPluginID="org.xtext.example.semcolor"
+    forceOverwrite="true" modelName="Semcolor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.example.semcolor.edit"
+    editorPluginID="org.xtext.example.semcolor.editor" runtimeVersion="2.11">
+  <genPackages prefix="Semcolor" basePackage="org.xtext.example" disposableProviderFactory="true"
+      fileExtensions="semcolor" ecorePackage="Semcolor.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Semcolor.ecore#//Gender">
+      <genEnumLiterals ecoreEnumLiteral="Semcolor.ecore#//Gender/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="Semcolor.ecore#//Gender/female"/>
+      <genEnumLiterals ecoreEnumLiteral="Semcolor.ecore#//Gender/male"/>
+    </genEnums>
+    <genClasses ecoreClass="Semcolor.ecore#//Persons">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Semcolor.ecore#//Persons/persons"/>
+    </genClasses>
+    <genClasses ecoreClass="Semcolor.ecore#//Person">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Semcolor.ecore#//Person/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Semcolor.ecore#//Person/gender"/>
+    </genClasses>
+    <genClasses ecoreClass="Semcolor.ecore#//Name">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Semcolor.ecore#//Name/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Semcolor.ecore#//Name/lastName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
