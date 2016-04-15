@@ -1,0 +1,38 @@
+grammar org.xtext.example.mydsl2.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl2/MyDsl"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+Model :
+    imports+=Import*
+    defines+=Define*
+    uses+=Use*
+    operations+=Operation*
+;
+
+Operation :
+	
+	'CLASSIFIER' name=ID  car=Cardinality ';'
+	
+;
+
+Cardinality:
+
+'[' lowerBound=INT '..' (upperBound=VV)']'; // here data trpe is taken as Int for upperbound and no value convertoer is called and default is assigned 
+
+terminal VV returns ecore::EIntegerObject:
+	
+	'*'
+;
+
+Import:
+    "import" importURI=STRING
+;
+
+Define returns ecore::EClass:
+	{Define}
+    "def" name=STRING
+;
+
+Use:
+    "use" use=[Define|STRING]
+;
